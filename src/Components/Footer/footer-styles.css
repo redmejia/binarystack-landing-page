@@ -1,0 +1,17 @@
+.footer-b {
+    position: absolute;
+    background-color: blueviolet;
+}
+
+.text-sm-m {
+    font-size: 30px;
+    font-weight: 300;
+
+    color: #3575D2;
+}
+.text-md {
+    font-size: 35px;
+    font-weight: 600;
+
+    color: #3575D2;
+}

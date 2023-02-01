@@ -1,0 +1,43 @@
+.header-background {
+    background: rgb(168, 194, 231);
+    background: linear-gradient(90deg, rgba(168, 194, 231, 1) 48%, rgba(38, 102, 197, 1) 100%);
+}
+.header-view {
+    height: 50vh;
+}
+.tech-img {
+    width: 100%;
+}
+
+.header-text-lg {
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.header-text-sm {
+    color: #3575D3;
+    font-size: large;
+    font-weight: 800;
+}
+
+/* extra small or regular */
+.header-text-xs{
+    color: #4A5465;
+    font-weight: 500; 
+}
+
+.go-tutorials {
+    font-weight: 800;
+    font-size: large;
+    color: white;
+    text-align: center;
+
+    background-color: #56C6F3;
+    border: 1px solid #bed5f5;
+    width: 400px;
+
+    text-transform: uppercase;
+    border-radius: 20px;
+}

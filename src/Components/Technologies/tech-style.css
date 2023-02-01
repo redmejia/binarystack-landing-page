@@ -1,0 +1,70 @@
+.tech-box {
+    margin-top: 15px;
+    position: relative;
+    /* height: 90px; */
+    background-color: blue;
+}
+
+.tech-card {
+    width: 50%;
+    /* height: 100px; */
+    border-radius: 5%;
+    /* border: 1px solid #0267FF; */
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+}
+
+
+.learn-skills{
+ 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* height:  20vh; */
+
+   
+}
+
+.text-lg {
+    font-size: 50px;
+    font-weight: 600;
+
+    text-transform: capitalize;
+    color: #3575D2;
+}
+
+.text-md {
+    font-size: 35px;
+    font-weight: 600;
+
+    color: #feffff;
+}
+.text-sm{
+    font-size: 19px;
+
+    color: #feffff;
+}
+.alert-box {
+    /* background: linear-gradient(to right, #7da5dd, #3151816e ); */
+    background: #A8C2E6;
+}
+
+/* .carousel-bg {
+    background: linear-gradient(to left, rgba(168, 194, 231, 1) 48%, rgba(38, 102, 197, 1) 100%);
+
+} */
+
+
+
+.box:hover {
+    width: 210px;
+    height: 90px;
+    box-shadow: 0 4px 9px rgb(47, 53, 65);
+}
+
+
