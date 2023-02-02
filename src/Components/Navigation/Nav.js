@@ -1,3 +1,4 @@
+import Signin from '../Signin/Signin';
 import mainLogo from './logo-01.svg';
 import './nav-style.css'
 
@@ -40,7 +41,12 @@ const Nav = () => (
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a className="signin-btn mr-2 mt-1 nav-link" href="#/">Sign in <span class="sr-only">(current)</span></a>
+
+                        <Signin
+                            childBtn={<button type="button" className="signin-btn  btn mr-2 mt-1 nav-link " data-toggle="modal" data-target="#myModal">
+                                Sign in
+                            </button>}
+                        />
                     </li>
                     <li className="nav-item">
                         <a className="join-btn mt-1 nav-link" href="#/">Join</a>
