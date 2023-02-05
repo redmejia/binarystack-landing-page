@@ -15,7 +15,7 @@ const Modal = ({ modalBtn }) => (
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-lines form-control" id="exampleInputPassword1" />
+                                <input type="password" class="form-lines form-control" id="exampleInputPassword1" autoComplete='on'/>
                             </div>
                         </form>
                     </div>

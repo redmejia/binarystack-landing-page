@@ -1,4 +1,6 @@
 import './join-style.css';
+import { useNavigate } from "react-router-dom";
+
 const JoinCard = ({ title, body, styles }) => (
     <div className="card" style={{ backgroundColor: '#ffff', height: '100%', ...styles }}>
         <div class="card-body">
@@ -9,6 +11,12 @@ const JoinCard = ({ title, body, styles }) => (
 )
 
 const JoinBs = () => {
+
+    let navigate = useNavigate()
+
+    const checkout = (plan) => {
+        navigate('/', { state: plan })
+    }
     return (
         <div className="col my-5">
             <div className="col text-center">
@@ -33,7 +41,7 @@ const JoinBs = () => {
                                 <div className="col">
                                     <p>Start from basics. You have four programming languages options.</p>
                                     <div className="text-center">
-                                        <h3 style={{ color: '#35b6d6' }}>Monthy</h3>
+                                        <h3 style={{ color: '#35b6d6' }}>Monthly</h3>
                                         <h1 style={{ color: '#4E6D98' }}>$15</h1>
                                     </div>
                                     <ul>
@@ -44,7 +52,12 @@ const JoinBs = () => {
                                     </ul>
 
                                     <div>
-                                        <button className="signin-btn-submit btn-lg btn-block ">start Now</button>
+                                        <button
+                                            className="signin-btn-submit btn-lg btn-block "
+                                            onClick={() => checkout({ plan: { planPay: 'monthly', planType: 'basics', planPrice: 15 } })}
+                                        >
+                                            start Now
+                                        </button>
                                     </div>
                                 </div>
                             }
@@ -94,7 +107,11 @@ const JoinBs = () => {
                                         <li>React Router</li>
                                     </ul>
                                     <div>
-                                        <button className="signin-btn-submit btn-lg btn-block ">start Now</button>
+                                        <button
+                                            className="signin-btn-submit btn-lg btn-block "
+                                            onClick={() => checkout({ plan: { planPay: 'yearly', planType: 'front end', planPrice: 100 } })}>
+                                            start Now
+                                        </button>
                                     </div>
                                 </div>
                             }
@@ -111,7 +128,6 @@ const JoinBs = () => {
                                     borderTopLeftRadius: "15px",
                                     borderBottomRightRadius: '15px',
                                     borderBottomLeftRadius: "15px",
-
                                 }
                             }
 
@@ -144,7 +160,12 @@ const JoinBs = () => {
                                         <li>Postgres</li>
                                     </ul>
                                     <div>
-                                        <button className="signin-btn-submit btn-lg btn-block ">start Now</button>
+                                        <button
+                                            className="signin-btn-submit btn-lg btn-block "
+                                            onClick={() => checkout({ plan: { planPay: 'yearly', planType: 'back end', planPrice: 100 } })}
+                                        >
+                                            start Now
+                                        </button>
                                     </div>
                                 </div>
                             }

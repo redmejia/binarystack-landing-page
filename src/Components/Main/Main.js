@@ -14,7 +14,6 @@ const Main = () => {
                 <Route path='/' element={<LandingPage learnBuild={learnBuild}/>} />
                 <Route path='join' element={<JoinBs />} />
             </Routes>
-
         </div>
     );
 }
