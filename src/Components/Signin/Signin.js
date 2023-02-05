@@ -20,7 +20,7 @@ const Modal = ({ modalBtn }) => (
                         </form>
                     </div>
                     <div className="p-1 col text-right">
-                        <a className="mt-1 nav-link text-success" href="#/">Create an account</a>
+                        <a className="mt-1 nav-link text-success" href="#/">Join Binary Stack</a>
                     </div>
                     <div className="p-1 col d-flex justify-content-center">
                         <button type="submit" class="signin-btn-submit btn-lg btn-block ">Submit</button>
