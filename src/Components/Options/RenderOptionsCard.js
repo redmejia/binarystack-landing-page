@@ -10,6 +10,8 @@ const options = [
         title: "Basics Let's Go",
         body: "It is time to buil you skills. Learn basic programing and full stack consepts",
         styles: {
+            backgroundColor : '#F3F4F6',
+            heigth : '100%',
             borderTopStyle: 'solid',
             borderTopWidth: 'medium',
             borderTopRightRadius: '15px',
@@ -22,6 +24,8 @@ const options = [
         title: "Front end",
         body: "Start by creating you will learn by doing. You will learn front end technologies",
         styles: {
+            backgroundColor : '#F3F4F6',
+            height : '100%',
             borderTopStyle: 'solid',
             borderTopWidth: 'medium',
             borderTopRightRadius: '15px',
@@ -34,6 +38,8 @@ const options = [
         title: "Back end",
         body: "Build all logic need for your front end. Conect front end and back end",
         styles: {
+            backgroundColor : '#F3F4F6',
+            height : '100%',
             borderTopStyle: 'solid',
             borderTopWidth: 'medium',
             borderTopRightRadius: '15px',
@@ -46,6 +52,8 @@ const options = [
         title: "Create",
         body: "Now it is time for you, You will show to the wold what you have learn and build",
         styles: {
+            backgroundColor : '#F3F4F6',
+            height : '100%',
             borderTopStyle: 'solid',
             borderTopWidth: 'medium',
             borderTopRightRadius: '15px',

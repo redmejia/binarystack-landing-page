@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Signin from '../Signin/Signin';
 import mainLogo from './logo-01.svg';
 import './nav-style.css'
@@ -5,9 +6,10 @@ import './nav-style.css'
 const Nav = () => (
     <nav class="navbar navbar-expand-lg navbar-dark tutorial-menu-bg ">
         <div class="container-xl">
-            <a class="navbar-brand mt-1" href="#/">
+            <Link to="/" className='navbar-brand mt-1' ><img className='nav-logo' src={mainLogo} alt="bs01" /></Link>
+            {/* <a class="navbar-brand mt-1" href="#/">
                 <img className='nav-logo' src={mainLogo} alt="bs01" />
-            </a>
+            </a> */}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,7 +51,7 @@ const Nav = () => (
                         />
                     </li>
                     <li className="nav-item">
-                        <a className="join-btn mt-1 nav-link" href="#/">Join</a>
+                        <Link className="join-btn mt-1 nav-link" to="join" >Join</Link>
                     </li>
                 </ul>
             </div>
