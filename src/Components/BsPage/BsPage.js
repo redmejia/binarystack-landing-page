@@ -5,7 +5,7 @@ import Collage from '../Collage/Collage';
 import Header from '../Header/Header';
 
 // Home binary stack page
-const Home = ({ learnBuild }) => (
+const BsPage = ({ learnBuild }) => (
     <div>
         <Header />
         <div className='pt-5 col-sm d-flex justify-content-center'>
@@ -32,4 +32,4 @@ const Home = ({ learnBuild }) => (
         <Footer />
     </div>
 )
-export default Home;
+export default BsPage;
