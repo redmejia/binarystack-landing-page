@@ -15,7 +15,7 @@ const JoinBs = () => {
     let navigate = useNavigate()
 
     const checkout = (plan) => {
-        navigate('/', { state: plan })
+        navigate('/checkout', { state: plan })
     }
     return (
         <div className="col my-5">
@@ -54,7 +54,7 @@ const JoinBs = () => {
                                     <div>
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
-                                            onClick={() => checkout({ plan: { planPay: 'monthly', planType: 'basics', planPrice: 15 } })}
+                                            onClick={() => checkout({ plan: { planPay: 'Monthly', planType: 'Basics', planPrice: 15 } })}
                                         >
                                             start Now
                                         </button>
@@ -109,7 +109,7 @@ const JoinBs = () => {
                                     <div>
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
-                                            onClick={() => checkout({ plan: { planPay: 'yearly', planType: 'front end', planPrice: 100 } })}>
+                                            onClick={() => checkout({ plan: { planPay: 'Yearly', planType: 'Front End', planPrice: 100 } })}>
                                             start Now
                                         </button>
                                     </div>
@@ -162,7 +162,7 @@ const JoinBs = () => {
                                     <div>
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
-                                            onClick={() => checkout({ plan: { planPay: 'yearly', planType: 'back end', planPrice: 100 } })}
+                                            onClick={() => checkout({ plan: { planPay: 'Yearly', planType: 'Back end', planPrice: 100 } })}
                                         >
                                             start Now
                                         </button>

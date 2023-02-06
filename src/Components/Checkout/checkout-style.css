@@ -1,0 +1,19 @@
+.proceed-btn {
+    font-weight: 800;
+    font-size: large;
+    color: white;
+    text-align: center;
+
+    background-color: #56C6F3;
+    border: 1px solid #bed5f5;
+
+    text-transform: uppercase;
+    border-radius: 20px;
+
+    background: linear-gradient(to right, #7da5dd, #56C6F3);
+}
+
+.proceed-btn:hover {
+    background: linear-gradient(to left, #7da5dd, #56C6F3);
+    box-shadow: 0 4px 8px rgb(96, 136, 215);
+}
