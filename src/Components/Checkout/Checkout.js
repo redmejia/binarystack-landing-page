@@ -1,9 +1,11 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './checkout-style.css';
 
 const Checkout = () => {
 
     let { state } = useLocation()
+
+    let navigate = useNavigate()
 
     return (
         <div className="mt-3 mb-3 p-3 container bg-light">
@@ -83,7 +85,13 @@ const Checkout = () => {
                         </div>
                     </div>
                 </div>
-                <button className="proceed-btn btn-lg btn-block" type="submit">Place order</button>
+                <button
+                    className="proceed-btn btn-lg btn-block"
+                    type="submit" 
+                    onClick={()=>{navigate("/profile")}}
+                >
+                    Place order
+                </button>
             </form>
         </div>
 
