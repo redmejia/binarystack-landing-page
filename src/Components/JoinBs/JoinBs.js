@@ -1,14 +1,6 @@
+import Card from '../Card/Card';
 import './join-style.css';
 import { useNavigate } from "react-router-dom";
-
-const JoinCard = ({ title, body, styles }) => (
-    <div className="card" style={{ backgroundColor: '#ffff', height: '100%', ...styles }}>
-        <div class="card-body">
-            {title}
-            {body}
-        </div>
-    </div>
-)
 
 const JoinBs = () => {
 
@@ -25,7 +17,7 @@ const JoinBs = () => {
             <div className="container mt-5">
                 <div className="row d-flex justify-content-center">
                     <div className='col-12 col-md-4 col-lg-4 col-xl-4 my-2'>
-                        <JoinCard
+                       <Card
                             title={
                                 <div
                                     style={{
@@ -81,7 +73,7 @@ const JoinBs = () => {
                         />
                     </div>
                     <div className='col-12 col-md-4 col-lg-4 col-xl-4 my-2'>
-                        <JoinCard
+                        <Card
                             title={
                                 <div
                                     style={{
@@ -134,7 +126,7 @@ const JoinBs = () => {
                         />
                     </div>
                     <div className='col-12 col-md-4 col-lg-4 col-xl-4 my-2'>
-                        <JoinCard
+                        <Card
                             title={
                                 <div
                                     style={{
