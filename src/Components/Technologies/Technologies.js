@@ -18,6 +18,7 @@ import './tech-style.css'
 const frontend = [
 
     {
+        id: 1,
         img: html,
         styles: {
             // background: '#E44D27',
@@ -30,6 +31,7 @@ const frontend = [
 
     },
     {
+        id: 2,
         img: css,
         styles: {
             // background: '#0365B7',
@@ -42,6 +44,7 @@ const frontend = [
 
     },
     {
+        id: 3,
         img: sass,
         styles: {
             // background: '#75AE63',
@@ -54,6 +57,7 @@ const frontend = [
 
     },
     {
+        id: 4,
         img: boot,
         styles: {
             // background: '#7911F6',
@@ -65,6 +69,7 @@ const frontend = [
         }
     },
     {
+        id: 5,
         img: js,
         styles: {
             // background: '#75AE63',
@@ -77,6 +82,7 @@ const frontend = [
 
     },
     {
+        id: 6,
         img: react,
         styles: {
             // background: '#75AE63',
@@ -89,6 +95,7 @@ const frontend = [
 
     },
     {
+        id: 7,
         img: redux,
         styles: {
             // background: '#7911F6',
@@ -106,6 +113,7 @@ const frontend = [
 // 'linear-gradient(to right, #a05eee, #7911f5)'
 const backend = [
     {
+        id: 1,
         img: git,
         styles: {
             // background: '#79D4FD',
@@ -117,6 +125,7 @@ const backend = [
         }
     },
     {
+        id: 2,
         img: go,
         styles: {
             // background: '#79D4FD',
@@ -128,6 +137,7 @@ const backend = [
         }
     },
     {
+        id: 3,
         img: node,
         styles: {
             // background: '#75AE63',
@@ -140,6 +150,7 @@ const backend = [
 
     },
     {
+        id: 4,
         img: bash,
         styles: {
             // background: '#7911F6',
@@ -151,6 +162,7 @@ const backend = [
         }
     },
     {
+        id: 5,
         img: mongo,
         styles: {
             // background: '#7911F6',
@@ -162,6 +174,7 @@ const backend = [
         }
     },
     {
+        id: 6,
         img: post,
         styles: {
             // background: '#7911F6',
@@ -181,7 +194,9 @@ const backend = [
 const techStack = (data) => {
     const imagesCard = data.map(i => {
         return (
-            <div className="p-1 col col-sm col-md"><img className='p-2 img-flex box' src={i.img} style={i.styles} alt="html" /></div>
+            <div className="p-1 col col-sm col-md" key={i.id}>
+                <img className='p-2 img-flex box' src={i.img} style={i.styles} alt="html" />
+            </div>
         )
     })
 
@@ -190,7 +205,7 @@ const techStack = (data) => {
 
 
 // techonologies carousel
-const Technologies = ({childrenBtn}) => {
+const Technologies = ({ childrenBtn }) => {
 
     const frontEnd = techStack(frontend)
     const backEnd = techStack(backend)
@@ -199,11 +214,11 @@ const Technologies = ({childrenBtn}) => {
             <div className='col mt-5'>
                 <div className='container'>
 
-                    <div class="alert alert-box" role="alert">
+                    <div className="alert alert-box" role="alert">
                         <h1 className='text-lg text-center'>Full Stack Technologies</h1>
                         <hr></hr>
                         <h2 className='text-md'>Learn, Build, Create and Share</h2>
-                        <ul class="list-unstyled  text-sm">
+                        <ul className="list-unstyled  text-sm">
                             <li>We have the best tutorials for you. Learn on your own with not confusing explanation.</li>
                             <li>You are not alone our binary stack comunity is here to help you.</li>
                         </ul>
