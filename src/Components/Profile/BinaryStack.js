@@ -87,16 +87,16 @@ const BinaryStackCourse = [
             borderRadius: 15,
             color: '#ffff'
         },
-        description: "You already know programing basics this is the next step.",
+        description: "Create the logic that is behind of your front end.",
         planStyle: {
             planPayColor: '#35b6d6',
             planPayTotal: '#4E6D98'
         },
         technologies: {
-            optOne: 'HTML / CSS',
-            optTwo: 'Bootstrap',
-            optThree: 'Reactjs',
-            optFour: 'React Router',
+            optOne: 'Node.js',
+            optTwo: 'Go',
+            optThree: 'Python',
+            optFour: 'Postgres',
         },
         styles: {
             heigth: '100%',
@@ -123,7 +123,7 @@ const BinaryStack = () => {
 
     const bsCourses = BinaryStackCourse.map(course => {
         return (
-            <div className='col-12 col-md-4 col-lg-4 col-xl-4 my-2' key={course.planId}>
+            <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-2' key={course.planId}>
                 <Card
                     title={
                         <div
@@ -151,6 +151,7 @@ const BinaryStack = () => {
                                     course.planId === newStudent.plan.planId ?
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
+                                            onClick={() => {alert("You already own this course")}}
                                         >
                                             Own
                                         </button> :
