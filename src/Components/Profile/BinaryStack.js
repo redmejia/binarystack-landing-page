@@ -153,7 +153,7 @@ const BinaryStack = () => {
                                             className="signin-btn-submit btn-lg btn-block "
                                             onClick={() => {alert("You already own this course")}}
                                         >
-                                            Own
+                                            Owned
                                         </button> :
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
