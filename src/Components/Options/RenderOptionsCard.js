@@ -6,6 +6,7 @@ import create from './create.svg';
 
 const options = [
     {
+        id : 1,
         image: escala,
         title: "Basics Let's Go",
         body: "It is time to buil you skills. Learn basic programing and full stack consepts",
@@ -20,6 +21,7 @@ const options = [
         },
     },
     {
+        id : 2,
         image: frontend,
         title: "Front end",
         body: "Start by creating you will learn by doing. You will learn front end technologies",
@@ -34,6 +36,7 @@ const options = [
         }
     },
     {
+        id : 3,
         image: backend,
         title: "Back end",
         body: "Build all logic need for your front end. Conect front end and back end",
@@ -48,6 +51,7 @@ const options = [
         }
     },
     {
+        id : 4,
         image: create,
         title: "Create",
         body: "Now it is time for you, You will show to the wold what you have learn and build",
@@ -67,7 +71,7 @@ const options = [
 const RenderOptionsCard = () => {
 
     const option = options.map(opt => (
-        <div className='col col-md-4 col-lg-4 col-xl-3 my-2'>
+        <div className='col col-md-4 col-lg-4 col-xl-3 my-2' key={opt.id}>
             <Card
                 image={<img className="text-center" src={opt.image} alt="options" />}
                 title={<h5 className="card-title text-center">{opt.title}</h5>}

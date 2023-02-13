@@ -1,11 +1,26 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import './checkout-style.css';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addnewStudent } from '../../redux/auth/join/joinSlice';
 
 const Checkout = () => {
 
     let { state } = useLocation()
 
     let navigate = useNavigate()
+
+    const [student, setStudentInfo] = useState({})
+
+    const dispatch = useDispatch()
+    
+    let lastFourNum;
+    if (student.card_number) {
+        const lastFour = /\d{12}/i;
+
+        lastFourNum = student.card_number.replace(lastFour, "****-****-****-")
+    }
+
 
     return (
         <div className="mt-3 mb-3 p-3 container bg-light">
@@ -43,43 +58,43 @@ const Checkout = () => {
                 <h4 className="mt-2">Create Account</h4>
                 <div className="form-row">
                     <div className="col-md-6 mb-3">
-                        <label for="validationDefault01">First name</label>
+                        <label>First name</label>
                         {/* add value={firstName} on each input tag*/}
-                        <input type="text" className="form-lines  form-control" id="validationDefault01" required />
+                        <input type="text" className="form-lines  form-control" name='first_name' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                     </div>
                     <div className="col-md-6 mb-3">
-                        <label for="validationDefault02">Last name</label>
-                        <input type="text" className="form-lines  form-control" id="validationDefault02" required />
+                        <label >Last name</label>
+                        <input type="text" className="form-lines  form-control" name='last_name' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                     </div>
                     <div className="col-md-6 mb-3">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" className="form-lines form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <label >Email</label>
+                        <input type="email" className="form-lines form-control" name='email' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} aria-describedby="emailHelp" />
                     </div>
                     <div className="col-md-6 mb-3">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" className="form-lines form-control" id="exampleInputPassword1" autoComplete='on' />
+                        <label >Password</label>
+                        <input type="password" className="form-lines form-control" name='password' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} autoComplete='on' />
                     </div>
                 </div>
                 <h4 className="mt-4">Payment</h4>
                 <div className="form-row">
                     <div className="col-md-6 mb-3">
-                        <label for="cc-name">Name on card</label>
-                        <input type="text" className="form-lines form-control" id="cc-name" placeholder="" required />
+                        <label >Name on card</label>
+                        <input type="text" className="form-lines form-control" id="cc-name" placeholder="" name='card_name' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                         <small className="text-muted">Full name as displayed on card</small>
                         <div className="invalid-feedback">
                             Name on card is required
                         </div>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <label for="cc-number">Credit card number</label>
-                        <input type="text" className="form-lines form-control" id="cc-number" placeholder="" required />
+                        <label >Credit card number</label>
+                        <input type="text" className="form-lines form-control" id="cc-number" placeholder="" name='card_number' value={lastFourNum} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                         <div className="invalid-feedback">
                             Credit card number is required
                         </div>
                     </div>
                     <div className="col-md-3 mb-3">
-                        <label for="cc-cvv">CVV</label>
-                        <input type="text" className="form-lines form-control" id="cc-cvv" placeholder="" required />
+                        <label >CVV</label>
+                        <input type="text" className="form-lines form-control" id="cc-cvv" placeholder="" name='card_cvv' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                         <div className="invalid-feedback">
                             Security code required
                         </div>
@@ -87,8 +102,13 @@ const Checkout = () => {
                 </div>
                 <button
                     className="proceed-btn btn-lg btn-block"
-                    type="submit" 
-                    onClick={()=>{navigate("/profile")}}
+                    type="submit"
+                    onClick={() => {
+                        const newStudent = { ...state, student }
+                        dispatch(addnewStudent(newStudent))
+                        navigate("/profile")
+
+                    }}
                 >
                     Place order
                 </button>

@@ -17,7 +17,7 @@ const JoinBs = () => {
             <div className="container mt-5">
                 <div className="row d-flex justify-content-center">
                     <div className='col-12 col-md-4 col-lg-4 col-xl-4 my-2'>
-                       <Card
+                        <Card
                             title={
                                 <div
                                     style={{
@@ -46,7 +46,7 @@ const JoinBs = () => {
                                     <div>
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
-                                            onClick={() => checkout({ plan: { planPay: 'Monthly', planType: 'Basics', planPrice: 15 } })}
+                                            onClick={() => checkout({ plan: { planId: 0, planPay: 'Monthly', planType: 'Basics', planPrice: 15 } })}
                                         >
                                             start Now
                                         </button>
@@ -101,7 +101,7 @@ const JoinBs = () => {
                                     <div>
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
-                                            onClick={() => checkout({ plan: { planPay: 'Yearly', planType: 'Front End', planPrice: 100 } })}>
+                                            onClick={() => checkout({ plan: { planId: 1, planPay: 'Yearly', planType: 'Front End', planPrice: 100 } })}>
                                             start Now
                                         </button>
                                     </div>
@@ -154,7 +154,7 @@ const JoinBs = () => {
                                     <div>
                                         <button
                                             className="signin-btn-submit btn-lg btn-block "
-                                            onClick={() => checkout({ plan: { planPay: 'Yearly', planType: 'Back end', planPrice: 100 } })}
+                                            onClick={() => checkout({ plan: { planId: 2, planPay: 'Yearly', planType: 'Back end', planPrice: 100 } })}
                                         >
                                             start Now
                                         </button>

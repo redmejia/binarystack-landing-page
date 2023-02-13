@@ -3,19 +3,19 @@ import './signin-style.css';
 const Modal = ({ modalBtn }) => (
     <>
         {modalBtn}
-        <div className="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="myModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content p-2">
 
                     <div className="modal-body">
                         <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-lines form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <div className="form-group">
+                                <label >Email</label>
+                                <input type="email" className="form-lines form-control"   aria-describedby="emailHelp" />
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-lines form-control" id="exampleInputPassword1" autoComplete='on'/>
+                            <div className="form-group">
+                                <label >Password</label>
+                                <input type="password" className="form-lines form-control"  autoComplete='on'/>
                             </div>
                         </form>
                     </div>
@@ -23,7 +23,7 @@ const Modal = ({ modalBtn }) => (
                         <a className="mt-1 nav-link text-success" href="#/">Join Binary Stack</a>
                     </div>
                     <div className="p-1 col d-flex justify-content-center">
-                        <button type="submit" class="signin-btn-submit btn-lg btn-block ">Submit</button>
+                        <button type="submit" className="signin-btn-submit btn-lg btn-block ">Submit</button>
                     </div>
                 </div>
             </div>
