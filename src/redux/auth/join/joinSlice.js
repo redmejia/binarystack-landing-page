@@ -5,7 +5,7 @@ const joinSlice = createSlice({
     initialState: {
         isRegister : false, 
         newStudent: {
-            plan: {
+            plan: { // you will not need this object.
                 planId : 0,
                 planPay: "",
                 planType: "",

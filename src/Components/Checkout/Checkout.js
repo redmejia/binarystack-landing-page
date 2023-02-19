@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addnewStudent, changeAuthNewStudent } from '../../redux/auth/join/joinSlice';
 import { signinCredential } from '../../redux/auth/signin/signinSlice';
+import { addAndPurchaseCourse } from '../../redux/course/courseSlice';
 
 const Checkout = () => {
 
@@ -108,6 +109,7 @@ const Checkout = () => {
                         const newStudent = { ...state, student }
                         dispatch(addnewStudent(newStudent))
                         dispatch(changeAuthNewStudent({isRegister : true}))
+                        dispatch(addAndPurchaseCourse(state.plan))
                         dispatch(signinCredential({email : student.email, password : student.password}))
                         navigate("/profile")
 
