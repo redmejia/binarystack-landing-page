@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 import order from './order.svg'
 import profile from './profile.svg'
@@ -8,6 +9,9 @@ import bs from './binary_stack.svg'
 
 const LeftNav = () => {
     // console.log("here ",student.first_name);
+
+
+ const {newStudent} = useSelector(state => state.join || {})
     return (
         
         <div className='container mt-4'>
@@ -17,7 +21,7 @@ const LeftNav = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to={"/profile"} >
                                     <img src={profile} alt='order' style={{ width: 24, height: 24 }} />{" "}
-                                    @reynaldo
+                                    {'@'+newStudent.student.firstName}
                                 </Link>
                             </li>
                             <li className="nav-item">
