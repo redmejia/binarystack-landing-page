@@ -31,7 +31,7 @@ const Orders = () => {
                                     <td>{newStudent.plan.planPay}</td>
                                     <td>{newStudent.plan.planType}</td>
                                     <td>{'$ ' + newStudent.plan.planPrice}</td>
-                                    <td>{newStudent.student.card_number}</td>
+                                    <td>{newStudent.student.cardNumber}</td>
                                 </tr>
                             </tbody>
                         </table>

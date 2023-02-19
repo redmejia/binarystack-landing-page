@@ -2,7 +2,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './checkout-style.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addnewStudent } from '../../redux/auth/join/joinSlice';
+import { addnewStudent, changeAuthNewStudent } from '../../redux/auth/join/joinSlice';
+import { signinCredential } from '../../redux/auth/signin/signinSlice';
 
 const Checkout = () => {
 
@@ -15,10 +16,10 @@ const Checkout = () => {
     const dispatch = useDispatch()
     
     let lastFourNum;
-    if (student.card_number) {
+    if (student.cardNumber) {
         const lastFour = /\d{12}/i;
 
-        lastFourNum = student.card_number.replace(lastFour, "****-****-****-")
+        lastFourNum = student.cardNumber.replace(lastFour, "****-****-****-")
     }
 
 
@@ -60,11 +61,11 @@ const Checkout = () => {
                     <div className="col-md-6 mb-3">
                         <label>First name</label>
                         {/* add value={firstName} on each input tag*/}
-                        <input type="text" className="form-lines  form-control" name='first_name' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
+                        <input type="text" className="form-lines  form-control" name='firstName' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                     </div>
                     <div className="col-md-6 mb-3">
                         <label >Last name</label>
-                        <input type="text" className="form-lines  form-control" name='last_name' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
+                        <input type="text" className="form-lines  form-control" name='lastName' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                     </div>
                     <div className="col-md-6 mb-3">
                         <label >Email</label>
@@ -79,7 +80,7 @@ const Checkout = () => {
                 <div className="form-row">
                     <div className="col-md-6 mb-3">
                         <label >Name on card</label>
-                        <input type="text" className="form-lines form-control" id="cc-name" placeholder="" name='card_name' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
+                        <input type="text" className="form-lines form-control" id="cc-name" placeholder="" name='cardName' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                         <small className="text-muted">Full name as displayed on card</small>
                         <div className="invalid-feedback">
                             Name on card is required
@@ -87,14 +88,14 @@ const Checkout = () => {
                     </div>
                     <div className="col-md-6 mb-3">
                         <label >Credit card number</label>
-                        <input type="text" className="form-lines form-control" id="cc-number" placeholder="" name='card_number' value={lastFourNum} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
+                        <input type="text" className="form-lines form-control" id="cc-number" placeholder="" name='cardNumber' value={lastFourNum} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                         <div className="invalid-feedback">
                             Credit card number is required
                         </div>
                     </div>
                     <div className="col-md-3 mb-3">
                         <label >CVV</label>
-                        <input type="text" className="form-lines form-control" id="cc-cvv" placeholder="" name='card_cvv' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
+                        <input type="text" className="form-lines form-control" id="cc-cvv" placeholder="" name='cardCvv' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                         <div className="invalid-feedback">
                             Security code required
                         </div>
@@ -106,6 +107,8 @@ const Checkout = () => {
                     onClick={() => {
                         const newStudent = { ...state, student }
                         dispatch(addnewStudent(newStudent))
+                        dispatch(changeAuthNewStudent({isRegister : true}))
+                        dispatch(signinCredential({email : student.email, password : student.password}))
                         navigate("/profile")
 
                     }}

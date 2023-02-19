@@ -1,9 +1,58 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Signin from '../Signin/Signin';
 import mainLogo from './logo-01.svg';
 import './nav-style.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { changeAuthNewStudent } from '../../redux/auth/join/joinSlice';
+import { changeSigninAuthStatus } from '../../redux/auth/signin/signinSlice';
 
-const Nav = () => (
+const SignoutNav = ({ authStatus }) => {
+
+    let navigate = useNavigate()
+    let dispatch = useDispatch()
+
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark tutorial-menu-bg ">
+            <div className="container-xl">
+                <Link to="/profile" className='navbar-brand mt-1' ><img className='nav-logo' src={mainLogo} alt="bs01" /></Link>
+                {/* <a className="navbar-brand mt-1" href="#/">
+            <img className='nav-logo' src={mainLogo} alt="bs01" />
+        </a> */}
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarsExample07XL">
+                    <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                        <li className="nav-item active">
+                            <button
+                                type="button"
+                                className="signin-btn   btn mr-2 mt-1 nav-link "
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                onClick={() => {
+                                    console.log("here ", authStatus);
+                                    if (authStatus.type === 'join') {
+                                        dispatch(changeAuthNewStudent({ isRegister: false }))
+                                        navigate('/')
+                                    }else {
+                                        dispatch(changeSigninAuthStatus({ isSignin: false }))
+                                        navigate('/')
+                                    }
+                                  
+                                }}
+                            >
+                                Sign out
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    )
+}
+
+const MainNav = () => (
     <nav className="navbar navbar-expand-lg navbar-dark tutorial-menu-bg ">
         <div className="container-xl">
             <Link to="/" className='navbar-brand mt-1' ><img className='nav-logo' src={mainLogo} alt="bs01" /></Link>
@@ -58,5 +107,26 @@ const Nav = () => (
         </div>
     </nav>
 )
+
+const Nav = () => {
+
+    const { isRegister } = useSelector(state => state.join || false)
+    const { isSignin } = useSelector(state => state.signin || false)
+
+    let status = {}
+    
+    if (isRegister) {
+        status["type"] = 'join'
+        return <SignoutNav authStatus={status} />;
+    }
+
+    if (isSignin) {
+        status["type"] = 'signin' // not used
+        return <SignoutNav authStatus={isSignin} />;
+    }
+    
+    return <MainNav />;
+}
+
 
 export default Nav;
