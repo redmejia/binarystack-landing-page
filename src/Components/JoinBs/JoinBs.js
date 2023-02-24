@@ -35,6 +35,7 @@ const JoinBs = () => {
                                     checkout({
                                         plan:
                                         {
+                                            owned : true,
                                             planId: course.planId,
                                             planPay: course.planPay,
                                             planType: course.planType,

@@ -1,6 +1,7 @@
 
 export const BinaryStackCourse = [
     {
+        owned : false,
         planId: 0,
         planPay: 'Monthly',
         planType: 'Basics',
@@ -38,6 +39,7 @@ export const BinaryStackCourse = [
 
     },
     {
+        owned : false,
         planId: 1,
         planPay: 'Yearly',
         planType: 'Front-End',
@@ -52,6 +54,15 @@ export const BinaryStackCourse = [
             planPayColor: '#35b6d6',
             planPayTotal: '#4E6D98'
         },
+        // ============== Change to this format for technologies
+        // technologies: [
+        //     {
+        //        optOne: 'HTML / CSS',
+        //        optTwo: 'Bootstrap',
+        //        optThree: 'Reactjs',
+        //        optFour: 'React Router',
+        //    }
+        // ],
         technologies: {
             optOne: 'HTML / CSS',
             optTwo: 'Bootstrap',
@@ -74,6 +85,7 @@ export const BinaryStackCourse = [
 
     },
     {
+        owned : false,
         planId: 2,
         planPay: 'Yearly',
         planType: 'Back-End',

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const Profile = () => {
     
-    const {newStudent} = useSelector(state => state.join || {})
+    const { newStudent } = useSelector(state => state.join || {})
 
 
     return (
@@ -13,7 +13,7 @@ const Profile = () => {
             <div className="container ">
                 <div className="row">
                     <div className="col-sm-3">
-                        <LeftNav  />
+                        <LeftNav />
                     </div>
                     <div className="col">
                         <div className="text-center">

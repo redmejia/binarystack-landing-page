@@ -1,21 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const coursesSlice = createSlice({
-    name: 'courses',
+const courseSlice = createSlice({
+    name: 'course',
     initialState: {
-        plan: []
+        add: true,
+        plan: {
+            course : []
+        },
     },
-    reducers : {
-        purchaseCourse : (state, action) => {
-            state.plan.push(action.payload)
+    reducers: {
+        purchaseCourse: (state, action) => {
+            state.plan.course.push(action.payload)
         }
     }
 })
 
-export default coursesSlice.reducer;
 
-const { purchaseCourse } = coursesSlice.actions;
+export default courseSlice.reducer;
+
+const { purchaseCourse } = courseSlice.actions;
 
 export const addAndPurchaseCourse = (course) => (dispatch) => {
     dispatch(purchaseCourse(course))

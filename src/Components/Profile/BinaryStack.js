@@ -1,61 +1,81 @@
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import LeftNav from "./LeftNav";
-import { BinaryStackCourse } from "../../BsCourses/bscourses";
+import { useNavigate } from "react-router-dom";
 
 
 const BinaryStack = () => {
-    const { newStudent } = useSelector(state => state.join)
 
-    const bsCourses = BinaryStackCourse.map(course => {
+
+
+    // const { newStudent } = useSelector(state => state.join)
+    const { plan } = useSelector(state => state.course || [])
+
+    const bsCourses = plan.course.map((course, i) => {
+
+        // let techList;
+
+
+        // if (BinaryStackCourse[i].planId === course.planId && course.planType === BinaryStackCourse[i].planType) {
+        //     techList = (
+        //         <>
+        //             <li>{BinaryStackCourse[i].technologies.optOne}</li>
+        //             <li>{BinaryStackCourse[i].technologies.optTwo}</li>
+        //             <li>{BinaryStackCourse[i].technologies.optThree}</li>
+        //             <li>{BinaryStackCourse[i].technologies.optFour}</li>
+        //         </>
+        //     )
+        // }
+
         return (
-            <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-2' key={course.planId}>
-                <Card
-                    title={
-                        <div
-                            style={course.topTitleStyle}
-                        >
-                            <h1 className="p-2 text-center">{course.planType}</h1>
-                        </div>
-                    }
-                    body={
-                        <div className="col">
-                            <p>{course.description}</p>
-                            <div className="text-center">
-                                <h3 style={{ color: '#35b6d6' }}>{course.planPay}</h3>
-                                <h1 style={{ color: '#4E6D98' }}>{'$' + course.planPrice}</h1>
-                            </div>
-                            <ul>
-                                <li>{course.technologies.optOne}</li>
-                                <li>{course.technologies.optTwo}</li>
-                                <li>{course.technologies.optThree}</li>
-                                <li>{course.technologies.optFour}</li>
-                            </ul>
-
-                            <div>
-                                {
-                                    course.planId === newStudent.plan.planId ?
-                                        <button
-                                            className="signin-btn-submit btn-lg btn-block "
-                                            onClick={() => { alert("You already own this course") }}
-                                        >
-                                            Owned
-                                        </button> :
-                                        <button
-                                            className="signin-btn-submit btn-lg btn-block "
-                                        // onClick={() => checkout({ plan: { planId: 0, planPay: 'Monthly', planType: 'Basics', planPrice: 15 } })}
-                                        >
-                                            start Now
-                                        </button>
+            <>
+                <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-2' key={course.planId}>
+                    <Card
+                        title={
+                            <div
+                                style={
+                                    {
+                                        background: 'linear-gradient(to right, #a8e7f7, #469bb1)',
+                                        borderRadius: 15,
+                                        color: '#ffff'
+                                    }
                                 }
+                            >
+                                <h1 className="p-2 text-center">{course.planType}</h1>
                             </div>
-                        </div>
-                    }
-                    styles={course.styles}
-                />
-            </div>
+                        }
+                        body={
+                            <div className="col">
+                                <p>{course.description}</p>
+                                <div className="text-center">
+                                    <h3 style={{ color: '#35b6d6' }}>{course.planPay}</h3>
+                                    <h1 style={{ color: '#4E6D98' }}>{'$' + course.planPrice}</h1>
+                                </div>
+                                <ul>
+                                    {/* {techList} */}
+                                    {/* <li>{BinaryStackCourse[i].technologies.optOne}</li>
+                                    <li>{BinaryStackCourse[i].technologies.optTwo}</li>
+                                    <li>{BinaryStackCourse[i].technologies.optThree}</li>
+                                    <li>{BinaryStackCourse[i].technologies.optFour}</li> */}
+                                </ul>
+                                <button
+                                    className="signin-btn-submit btn-lg btn-block "
+                                >
+                                    owned
+                                </button>
+                            </div>
+                        }
+                        styles={course.styles}
+                    />
+                </div>
+            </>
         )
     })
+
+    console.log("plan in BS ", plan);
+
+    const navigate = useNavigate()
+
     return (
         <>
             <div className="container ">
@@ -68,6 +88,24 @@ const BinaryStack = () => {
                         <hr></hr>
                         <div className="row">
                             {bsCourses}
+                        </div>
+                        <div className="row">
+                            <div className="className='col-12 col-md-4 col-lg-4 col-xl-6 my-2"></div>
+                            <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-2'>
+                                {
+                                    plan.course.length === 3 ? <div class="alert alert-success" role="alert">
+                                        You own all Binary Stack Courses!
+                                    </div> :
+                                        <button
+                                            className="signin-btn-submit btn-lg btn-block"
+                                            onClick={() => {
+                                                navigate("/new/order", { state: { plan } })
+                                            }}
+                                        >
+                                            add  course
+                                        </button>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

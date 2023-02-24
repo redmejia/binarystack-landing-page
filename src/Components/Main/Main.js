@@ -8,6 +8,7 @@ import Checkout from '../Checkout/Checkout';
 import Profile from '../Profile/Profile';
 import Orders from '../Profile/Orders';
 import BinaryStack from '../Profile/BinaryStack';
+import NewOrder from '../Profile/NewOrder';
 
 
 const Main = () => {
@@ -21,6 +22,7 @@ const Main = () => {
 
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/order' element={<Orders />} />
+                <Route path='/new/order' element={<NewOrder />} />
                 <Route path='/bs' element={<BinaryStack />} />
             </Routes>
         </div>
