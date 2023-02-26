@@ -86,6 +86,20 @@ const BinaryStack = () => {
                     <div className="col">
                         <h1 className="mt-2 text-center" style={{ fontWeight: '300' }}>Bs Courses</h1>
                         <hr></hr>
+                        {
+                            plan.course.length === 3 ?
+
+                                <div className="alert text-center" role="alert" style={{
+                                    background: 'linear-gradient(to right, #de7459, #e44d27)',
+                                    borderRadius: 15,
+                                    borderBlockColor : 'red',
+                                    color: '#ffff',
+                                    fontWeight :'bold',
+                                }}>
+                                    You own all Binary Stack Courses!
+                                </div>
+                                : <></>
+                        }
                         <div className="row">
                             {bsCourses}
                         </div>
@@ -93,9 +107,7 @@ const BinaryStack = () => {
                             <div className="className='col-12 col-md-4 col-lg-4 col-xl-6 my-2"></div>
                             <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-2'>
                                 {
-                                    plan.course.length === 3 ? <div class="alert alert-success" role="alert">
-                                        You own all Binary Stack Courses!
-                                    </div> :
+                                    plan.course.length === 3 ? <></> :
                                         <button
                                             className="signin-btn-submit btn-lg btn-block"
                                             onClick={() => {
