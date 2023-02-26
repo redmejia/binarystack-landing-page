@@ -29,7 +29,7 @@ const NewOrder = () => {
 
     const owned = state.plan.course.map(own => {
         return (
-            <div className="className='col-12 col-md-4 col-lg-4 col-xl-6 my-2'">
+            <div className="col-12 col-md-4 col-lg-4 col-xl-6 my-2">
                 <Card
                     title={
                         <div>

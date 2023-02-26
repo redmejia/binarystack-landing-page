@@ -72,7 +72,7 @@ const BinaryStack = () => {
         )
     })
 
-    console.log("plan in BS ", plan);
+   
 
     const navigate = useNavigate()
 
@@ -104,7 +104,7 @@ const BinaryStack = () => {
                             {bsCourses}
                         </div>
                         <div className="row">
-                            <div className="className='col-12 col-md-4 col-lg-4 col-xl-6 my-2"></div>
+                            <div className="col-12 col-md-4 col-lg-4 col-xl-6 my-2"></div>
                             <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-2'>
                                 {
                                     plan.course.length === 3 ? <></> :
