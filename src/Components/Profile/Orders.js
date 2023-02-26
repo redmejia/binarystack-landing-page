@@ -6,7 +6,7 @@ const Orders = () => {
     const { plan } = useSelector(state => state.course || [])
 
     const myOrderList = plan.course.map((plan, i) => {
-        console.log(plan);
+  
         return (
             <tbody>
                 <tr>
