@@ -3,38 +3,53 @@ import LeftNav from "./LeftNav";
 
 const Orders = () => {
     const { newStudent } = useSelector(state => state.join || {})
+    const { plan } = useSelector(state => state.course || [])
+
+    const myOrderList = plan.course.map((plan, i) => {
+        console.log(plan);
+        return (
+            <tbody>
+                <tr>
+                    <th scope="row">{i + 1}</th>
+                    <td>{newStudent.student.email}</td>
+                    <td>{plan.planPay}</td>
+                    <td>{plan.planType}</td>
+                    <td>{'$ ' + plan.planPrice}</td>
+                    <td>{newStudent.student.cardNumber}</td>
+                </tr>
+            </tbody>
+        )
+    })
+
     return (
         <>
+
             <div className="container ">
                 <div className="row">
                     <div className="col-sm-3">
                         <LeftNav />
                     </div>
                     <div className="col">
-                        <h1 className="mt-2 text-center" style={{ fontWeight: '300' }}>Order</h1>
+                        <h1 className="mt-2 text-center" style={{ fontWeight: '300' }}>Bs Courses</h1>
                         <hr></hr>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Plan Pay</th>
-                                    <th scope="col">Plan Type</th>
-                                    <th scope="col">Total</th>
-                                    <th scope="col">Card Num</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>{newStudent.student.email}</td>
-                                    <td>{newStudent.plan.planPay}</td>
-                                    <td>{newStudent.plan.planType}</td>
-                                    <td>{'$ ' + newStudent.plan.planPrice}</td>
-                                    <td>{newStudent.student.cardNumber}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div className="row">
+                            <div className="col d-flex justify-content-center">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Plan Pay</th>
+                                            <th scope="col">Plan Type</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Card Number</th>
+                                        </tr>
+                                    </thead>
+                                    {myOrderList}
+                                </table>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
