@@ -33,13 +33,13 @@ const NewOrder = () => {
                 <Card
                     title={
                         <div>
-                            <h3 className="text-center">Plan Type {own.planType}</h3>
+                            <h3 className="text-center">Plan Type <span style={{ fontWeight: 'bold', fontSize : 40 }}>{own.planType}</span></h3>
                         </div>
                     }
                     body={
                         <div>
                             <h3 className="text-center">Price: ${own.planPrice}</h3>
-                            <h2 className="text-center">OWNED</h2>
+                            <h2 className="text-center"> <span style={{ fontWeight: 'bold', fontSize: 60 }}>OWNED</span></h2>
                         </div>
                     }
 
