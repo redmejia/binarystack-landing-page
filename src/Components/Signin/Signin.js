@@ -50,7 +50,6 @@ const Modal = ({ modalBtn }) => {
                                 className="signin-btn-submit btn-lg btn-block "
                                 data-dismiss="modal"
                                 onClick={() => {
-                                    console.log(studentSignin);
                                     if (student.email === studentSignin.email && student.password === studentSignin.password) {
                                         dispatch(changeSigninAuthStatus({ isSignin: true }))
                                         navigate("/profile")

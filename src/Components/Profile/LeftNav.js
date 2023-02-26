@@ -9,7 +9,7 @@ import bs from './binary_stack.svg'
 
 const LeftNav = () => {
 
-    const { newStudent } = useSelector(state => state.join || {})
+    const { newStudent } = useSelector(state => state.join || {}) // student
     
     return (
 
@@ -20,7 +20,7 @@ const LeftNav = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to={"/profile"} >
                                 <img src={profile} alt='order' style={{ width: 24, height: 24 }} />{" "}
-                                {'@' + newStudent.student.firstName}
+                                {'@' + newStudent.firstName}
                             </Link>
                         </li>
                         <li className="nav-item">

@@ -1,7 +1,7 @@
 
 export const BinaryStackCourse = [
     {
-        owned : false,
+        owned: false,
         planId: 0,
         planPay: 'Monthly',
         planType: 'Basics',
@@ -16,12 +16,15 @@ export const BinaryStackCourse = [
             planPayColor: '#35b6d6',
             planPayTotal: '#4E6D98'
         },
-        technologies: {
-            optOne: 'Javascript',
-            optTwo: 'Python',
-            optThree: 'Go',
-            optFour: 'Rust',
-        },
+        technologies: [
+            {
+                courseId: 0,
+                optOne: 'Javascript',
+                optTwo: 'Python',
+                optThree: 'Go',
+                optFour: 'Rust',
+            }
+        ],
         styles: {
             heigth: '100%',
 
@@ -39,7 +42,7 @@ export const BinaryStackCourse = [
 
     },
     {
-        owned : false,
+        owned: false,
         planId: 1,
         planPay: 'Yearly',
         planType: 'Front-End',
@@ -63,12 +66,15 @@ export const BinaryStackCourse = [
         //        optFour: 'React Router',
         //    }
         // ],
-        technologies: {
-            optOne: 'HTML / CSS',
-            optTwo: 'Bootstrap',
-            optThree: 'Reactjs',
-            optFour: 'React Router',
-        },
+        technologies: [
+            {
+                courseId: 1,
+                optOne: 'HTML / CSS',
+                optTwo: 'Bootstrap',
+                optThree: 'Reactjs',
+                optFour: 'React Router',
+            }
+        ],
         styles: {
             heigth: '100px',
 
@@ -85,7 +91,7 @@ export const BinaryStackCourse = [
 
     },
     {
-        owned : false,
+        owned: false,
         planId: 2,
         planPay: 'Yearly',
         planType: 'Back-End',
@@ -100,12 +106,15 @@ export const BinaryStackCourse = [
             planPayColor: '#35b6d6',
             planPayTotal: '#4E6D98'
         },
-        technologies: {
-            optOne: 'Node.js',
-            optTwo: 'Go',
-            optThree: 'Python',
-            optFour: 'Postgres',
-        },
+        technologies: [
+            {
+                courseId: 2,
+                optOne: 'Node.js',
+                optTwo: 'Go',
+                optThree: 'Python',
+                optFour: 'Postgres',
+            },
+        ],
         styles: {
             heigth: '100%',
 

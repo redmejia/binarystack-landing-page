@@ -31,7 +31,6 @@ const SignoutNav = ({ authStatus }) => {
                                 data-toggle="modal"
                                 data-target="#myModal"
                                 onClick={() => {
-                                    console.log("here ", authStatus);
                                     if (authStatus.type === 'join') {
                                         dispatch(changeAuthNewStudent({ isRegister: false }))
                                         navigate('/')
