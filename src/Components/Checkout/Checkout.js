@@ -61,7 +61,6 @@ const Checkout = () => {
                 <div className="form-row">
                     <div className="col-md-6 mb-3">
                         <label>First name</label>
-                        {/* add value={firstName} on each input tag*/}
                         <input type="text" className="form-lines  form-control" name='firstName' onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                     </div>
                     <div className="col-md-6 mb-3">
@@ -106,8 +105,7 @@ const Checkout = () => {
                     className="proceed-btn btn-lg btn-block"
                     type="submit"
                     onClick={() => {
-                        const newStudent = { ...state, student }
-                        dispatch(addnewStudent(newStudent))
+                        dispatch(addnewStudent(student))
                         dispatch(changeAuthNewStudent({isRegister : true}))
                         dispatch(addAndPurchaseCourse(state.plan))
                         dispatch(signinCredential({email : student.email, password : student.password}))

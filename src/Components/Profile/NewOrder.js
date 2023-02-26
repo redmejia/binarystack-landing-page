@@ -13,7 +13,7 @@ const NewOrder = () => {
     const { newStudent } = useSelector(state => state.join || {}) // join slice will change newStudent object
     const dispatch = useDispatch()
 
-    const [student, setStudentInfo] = useState(newStudent.student)
+    const [student, setStudentInfo] = useState(newStudent)
     const [isSelected, setSelected] = useState(false)
     const [course, setCourse] = useState({})
 
@@ -29,7 +29,7 @@ const NewOrder = () => {
 
     const owned = state.plan.course.map(own => {
         return (
-            <div className="col-12 col-md-4 col-lg-4 col-xl-6 my-2">
+            <div className="col-12 col-md-4 col-lg-4 col-xl-6 my-2" key={own.planId}>
                 <Card
                     title={
                         <div>
@@ -54,7 +54,7 @@ const NewOrder = () => {
     })
 
     const bsCourses = BinaryStackCourse.map(course => (
-        <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-4'>
+        <div className='col-12 col-md-4 col-lg-4 col-xl-6 my-4' key={course.planId}>
 
             <Card
                 title={
@@ -72,10 +72,10 @@ const NewOrder = () => {
                             <h1 style={{ color: '#4E6D98' }}>{'$' + course.planPrice}</h1>
                         </div>
                         <ul>
-                            <li>{course.technologies.optOne}</li>
-                            <li>{course.technologies.optTwo}</li>
-                            <li>{course.technologies.optThree}</li>
-                            <li>{course.technologies.optFour}</li>
+                            <li>{course.technologies[0].optOne}</li>
+                            <li>{course.technologies[0].optTwo}</li>
+                            <li>{course.technologies[0].optThree}</li>
+                            <li>{course.technologies[0].optFour}</li>
                         </ul>
                         <div>
                             <button
@@ -83,6 +83,7 @@ const NewOrder = () => {
                                 onClick={() => {
                                     setCourse({
                                         owned: true,
+                                        courseTech: course.technologies,
                                         planId: course.planId,
                                         planPay: course.planPay,
                                         planType: course.planType,
@@ -111,7 +112,7 @@ const NewOrder = () => {
                     </div>
                     <div className="col" >
                         <div className="text-center">
-                            {/* <h1 className="mt-2" style={{ fontWeight: '300' }}>{state.planType}</h1> */}
+                            <h1 className="mt-2" style={{ fontWeight: '300' }}>New Order</h1>
                         </div>
                         <hr></hr>
                         <div className="row">
@@ -157,11 +158,11 @@ const NewOrder = () => {
                                         <div className="form-row">
                                             <div className="col-md-6 mb-3">
                                                 <label >Email</label>
-                                                <input type="email" className="form-lines form-control" name='email' defaultValue={newStudent.student.email} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} aria-describedby="emailHelp" />
+                                                <input type="email" className="form-lines form-control" name='email' defaultValue={student.email} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} aria-describedby="emailHelp" />
                                             </div>
                                             <div className="col-md-6 mb-3">
                                                 <label >Name on card</label>
-                                                <input type="text" className="form-lines form-control" id="cc-name" placeholder="" name='cardName' defaultValue={newStudent.student.cardName} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
+                                                <input type="text" className="form-lines form-control" id="cc-name" placeholder="" name='cardName' defaultValue={student.cardName} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                                                 <small className="text-muted">Full name as displayed on card</small>
                                                 <div className="invalid-feedback">
                                                     Name on card is required
@@ -176,7 +177,7 @@ const NewOrder = () => {
                                             </div>
                                             <div className="col-md-3 mb-3">
                                                 <label >CVV</label>
-                                                <input type="text" className="form-lines form-control" id="cc-cvv" placeholder="" name='cardCvv' defaultValue={newStudent.student.cardCvv} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
+                                                <input type="text" className="form-lines form-control" id="cc-cvv" placeholder="" name='cardCvv' defaultValue={student.cardCvv} onChange={e => setStudentInfo({ ...student, [e.target.name]: e.target.value })} required />
                                                 <div className="invalid-feedback">
                                                     Security code required
                                                 </div>

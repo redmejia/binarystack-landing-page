@@ -11,11 +11,11 @@ const Orders = () => {
             <tbody>
                 <tr>
                     <th scope="row">{i + 1}</th>
-                    <td>{newStudent.student.email}</td>
+                    <td>{newStudent.email}</td>
                     <td>{plan.planPay}</td>
                     <td>{plan.planType}</td>
                     <td>{'$ ' + plan.planPrice}</td>
-                    <td>{newStudent.student.cardNumber}</td>
+                    <td>{newStudent.cardNumber}</td>
                 </tr>
             </tbody>
         )
@@ -34,7 +34,7 @@ const Orders = () => {
                         <hr></hr>
                         <div className="row">
                             <div className="col d-flex justify-content-center">
-                                <table class="table table-striped">
+                                <table className="table table-striped">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>

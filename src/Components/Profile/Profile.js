@@ -5,16 +5,11 @@ import { useSelector } from "react-redux";
 
 const Profile = () => {
 
-    // const { newStudent } = useSelector(state => state.join || {})
     const { plan } = useSelector(state => state.course || {})
 
-    // const {course } = plan.course
-    // console.log("course ", plan.course);
-
     const myCourses = plan.course.map(course => {
-        // console.log(course);
         return (
-            <div className="col col-12 col-md-4 col-lg-4 col-xl-6 my-2">
+            <div className="col col-12 col-md-4 col-lg-4 col-xl-6 my-2" key={course.planId}>
                 <Card
                     title={<h3 className="text-center">{course.planType}</h3>}
                     styles={{

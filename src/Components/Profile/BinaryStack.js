@@ -8,24 +8,9 @@ const BinaryStack = () => {
 
 
 
-    // const { newStudent } = useSelector(state => state.join)
     const { plan } = useSelector(state => state.course || [])
 
     const bsCourses = plan.course.map((course, i) => {
-
-        // let techList;
-
-
-        // if (BinaryStackCourse[i].planId === course.planId && course.planType === BinaryStackCourse[i].planType) {
-        //     techList = (
-        //         <>
-        //             <li>{BinaryStackCourse[i].technologies.optOne}</li>
-        //             <li>{BinaryStackCourse[i].technologies.optTwo}</li>
-        //             <li>{BinaryStackCourse[i].technologies.optThree}</li>
-        //             <li>{BinaryStackCourse[i].technologies.optFour}</li>
-        //         </>
-        //     )
-        // }
 
         return (
             <>
@@ -52,11 +37,10 @@ const BinaryStack = () => {
                                     <h1 style={{ color: '#4E6D98' }}>{'$' + course.planPrice}</h1>
                                 </div>
                                 <ul>
-                                    {/* {techList} */}
-                                    {/* <li>{BinaryStackCourse[i].technologies.optOne}</li>
-                                    <li>{BinaryStackCourse[i].technologies.optTwo}</li>
-                                    <li>{BinaryStackCourse[i].technologies.optThree}</li>
-                                    <li>{BinaryStackCourse[i].technologies.optFour}</li> */}
+                                    <li>{course.courseTech[0].optOne}</li>
+                                    <li>{course.courseTech[0].optTwo}</li>
+                                    <li>{course.courseTech[0].optThree}</li>
+                                    <li>{course.courseTech[0].optFour}</li>
                                 </ul>
                                 <button
                                     className="signin-btn-submit btn-lg btn-block "
@@ -72,7 +56,7 @@ const BinaryStack = () => {
         )
     })
 
-   
+
 
     const navigate = useNavigate()
 
@@ -92,9 +76,9 @@ const BinaryStack = () => {
                                 <div className="alert text-center" role="alert" style={{
                                     background: 'linear-gradient(to right, #de7459, #e44d27)',
                                     borderRadius: 15,
-                                    borderBlockColor : 'red',
+                                    borderBlockColor: 'red',
                                     color: '#ffff',
-                                    fontWeight :'bold',
+                                    fontWeight: 'bold',
                                 }}>
                                     You own all Binary Stack Courses!
                                 </div>

@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 const JoinBs = () => {
 
     const bscourses = BinaryStackCourse.map(course => (
-        <div className='col-12 col-md-4 col-lg-4 col-xl-4 my-2'>
+
+        <div className='col-12 col-md-4 col-lg-4 col-xl-4 my-2' key={course.planId}>
             <Card
                 title={
                     <div
@@ -23,10 +24,10 @@ const JoinBs = () => {
                             <h1 style={{ color: '#4E6D98' }}>{'$' + course.planPrice}</h1>
                         </div>
                         <ul>
-                            <li>{course.technologies.optOne}</li>
-                            <li>{course.technologies.optTwo}</li>
-                            <li>{course.technologies.optThree}</li>
-                            <li>{course.technologies.optFour}</li>
+                            <li>{course.technologies[0].optOne}</li>
+                            <li>{course.technologies[0].optTwo}</li>
+                            <li>{course.technologies[0].optThree}</li>
+                            <li>{course.technologies[0].optFour}</li>
                         </ul>
                         <div>
                             <button
@@ -35,7 +36,8 @@ const JoinBs = () => {
                                     checkout({
                                         plan:
                                         {
-                                            owned : true,
+                                            owned: true,
+                                            courseTech : course.technologies,
                                             planId: course.planId,
                                             planPay: course.planPay,
                                             planType: course.planType,
