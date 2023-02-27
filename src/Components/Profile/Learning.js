@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { bsLearning } from "./bslearnig";
+// import { bsLearning } from "./bslearnig";
 import './learing-styles.css';
 import Card from "../Card/Card";
 
@@ -17,18 +17,17 @@ const Learning = () => {
                             <button className="btn continue-btn"> {tech.optOne}</button>
                         </div>
                         <div className="col">
-                            <button className="btn continue-btn " style={{ fontWeight: 'bold', fontSize: 20, }}>{tech.optTwo}</button>
+                            <button className="btn continue-btn " >{tech.optTwo}</button>
                         </div>
                         <div className="col">
-                            <button className="btn continue-btn" style={{ fontWeight: 'bold', fontSize: 20, }}>{tech.optThree}</button>
+                            <button className="btn continue-btn" >{tech.optThree}</button>
                         </div>
                         <div className="col">
-                            <button className="btn continue-btn" style={{ fontWeight: 'bold', fontSize: 20, }}>{tech.optFour}</button>
+                            <button className="btn continue-btn" >{tech.optFour}</button>
                         </div>
                     </div>
                 }
                 styles={{ backgroundColor: '#F3F4F6' }}
-
             />
         )
     })
