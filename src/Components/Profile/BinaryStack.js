@@ -80,7 +80,7 @@ const BinaryStack = () => {
                                     color: '#ffff',
                                     fontWeight: 'bold',
                                 }}>
-                                    You own all Binary Stack Courses!
+                                    You own all Binary Stack Courses
                                 </div>
                                 : <></>
                         }

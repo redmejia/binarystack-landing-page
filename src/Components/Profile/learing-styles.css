@@ -1,0 +1,15 @@
+.continue-btn {
+    font-weight: 800;
+    font-size: large;
+    color: white;
+    text-align: center;
+
+    background-color: linear-gradient(to right, #7da5dd, #56C6F3 );
+    border: 1px solid #bed5f5;
+    width: 200px;
+
+    text-transform: uppercase;
+    border-radius: 20px;
+
+    background: linear-gradient(to right, #7da5dd, #56C6F3 );
+}

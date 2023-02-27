@@ -9,6 +9,7 @@ import Profile from '../Profile/Profile';
 import Orders from '../Profile/Orders';
 import BinaryStack from '../Profile/BinaryStack';
 import NewOrder from '../Profile/NewOrder';
+import Learning from '../Profile/Learning';
 
 
 const Main = () => {
@@ -24,6 +25,8 @@ const Main = () => {
                 <Route path='/order' element={<Orders />} />
                 <Route path='/new/order' element={<NewOrder />} />
                 <Route path='/bs' element={<BinaryStack />} />
+                <Route path='/learning' element={<Learning />} />
+                
             </Routes>
         </div>
     );

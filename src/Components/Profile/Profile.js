@@ -1,4 +1,5 @@
 // import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Card from "../Card/Card";
 import LeftNav from "./LeftNav";
 import { useSelector } from "react-redux";
@@ -6,6 +7,9 @@ import { useSelector } from "react-redux";
 const Profile = () => {
 
     const { plan } = useSelector(state => state.course || {})
+
+  
+    let navigate = useNavigate()
 
     const myCourses = plan.course.map(course => {
         return (
@@ -31,6 +35,9 @@ const Profile = () => {
                             <button
                                 className="proceed-btn btn-lg btn-block"
                                 type="submit"
+                                onClick={() => {
+                                    navigate('/learning', {state : course.courseTech})
+                                }}
                             >
                                 Continue Learning
                             </button>
