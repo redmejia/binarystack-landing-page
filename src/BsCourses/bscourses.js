@@ -46,7 +46,7 @@ export const BinaryStackCourse = [
         planId: 1,
         planPay: 'Yearly',
         planType: 'Front-End',
-        planPrice: 100,
+        planPrice: 53,
         topTitleStyle: {
             background: 'linear-gradient(to right, #ffef81, #c6b645)',
             borderRadius: 15,
@@ -57,15 +57,6 @@ export const BinaryStackCourse = [
             planPayColor: '#35b6d6',
             planPayTotal: '#4E6D98'
         },
-        // ============== Change to this format for technologies
-        // technologies: [
-        //     {
-        //        optOne: 'HTML / CSS',
-        //        optTwo: 'Bootstrap',
-        //        optThree: 'Reactjs',
-        //        optFour: 'React Router',
-        //    }
-        // ],
         technologies: [
             {
                 courseId: 1,
@@ -95,7 +86,7 @@ export const BinaryStackCourse = [
         planId: 2,
         planPay: 'Yearly',
         planType: 'Back-End',
-        planPrice: 100,
+        planPrice: 53,
         topTitleStyle: {
             background: 'linear-gradient(to right, #de7459, #e44d27)',
             borderRadius: 15,

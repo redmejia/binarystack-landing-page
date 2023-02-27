@@ -23,14 +23,13 @@ const Orders = () => {
 
     return (
         <>
-
             <div className="container ">
                 <div className="row">
                     <div className="col-sm-3">
                         <LeftNav />
                     </div>
                     <div className="col">
-                        <h1 className="mt-2 text-center" style={{ fontWeight: '300' }}>Bs Courses</h1>
+                        <h1 className="mt-2 text-center" style={{ fontWeight: '300' }}>My Orders</h1>
                         <hr></hr>
                         <div className="row">
                             <div className="col d-flex justify-content-center">
