@@ -63,7 +63,7 @@ const MainNav = () => (
             </button>
             <div className="collapse navbar-collapse" id="navbarsExample07XL">
                 <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li className="nav-item dropdown dropleft">
+                    {/* <li className="nav-item dropdown dropleft">
                         <a className="tutorials nav-link mr-2 mt-1 dropdown-toggle" href="#/" data-toggle="dropdown" aria-expanded="false">Tutorials</a>
                         <div className="tutorial-menu dropdown-menu">
                             <div className='col'>Beginner/Basics</div>
@@ -89,7 +89,7 @@ const MainNav = () => (
                                 <div className='col'><a className="dropdown-item" href="#/">MongoDB</a></div>
                             </div>
                         </div>
-                    </li>
+                    </li> */}
                     <li className="nav-item active">
 
                         <Signin
