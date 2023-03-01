@@ -37,7 +37,7 @@ const JoinBs = () => {
                                         plan:
                                         {
                                             owned: true,
-                                            courseTech : course.technologies,
+                                            course : course.technologies,
                                             planId: course.planId,
                                             planPay: course.planPay,
                                             planType: course.planType,

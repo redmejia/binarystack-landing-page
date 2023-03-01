@@ -12,7 +12,7 @@ const Header = () => {
                             <h6 className='header-text-sm'>Learn and build start you career with Binary Stack</h6>
                             <p className='header-text-xs'>You want to learn how to code, start from the basic and step by step build you future. We have full stack developemt path for you
                             </p>
-                            <button className='go-tutorials'>view our tutorials</button> 
+                            {/* <button className='go-tutorials'>view our tutorials</button>  */}
                         </div>
                     </div>
                     <div className='col-12  col-sm-6 col-md-6 d-none d-sm-block d-flex justify-content-center'>

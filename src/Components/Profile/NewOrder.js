@@ -83,7 +83,7 @@ const NewOrder = () => {
                                 onClick={() => {
                                     setCourse({
                                         owned: true,
-                                        courseTech: course.technologies,
+                                        course: course.technologies,
                                         planId: course.planId,
                                         planPay: course.planPay,
                                         planType: course.planType,

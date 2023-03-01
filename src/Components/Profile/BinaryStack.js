@@ -10,7 +10,7 @@ const BinaryStack = () => {
 
     const { plan } = useSelector(state => state.course || [])
 
-    const bsCourses = plan.course.map((course, i) => {
+    const bsCourses = plan.course.map((course) => {
 
         return (
             <>
@@ -37,10 +37,10 @@ const BinaryStack = () => {
                                     <h1 style={{ color: '#4E6D98' }}>{'$' + course.planPrice}</h1>
                                 </div>
                                 <ul>
-                                    <li>{course.courseTech[0].optOne}</li>
-                                    <li>{course.courseTech[0].optTwo}</li>
-                                    <li>{course.courseTech[0].optThree}</li>
-                                    <li>{course.courseTech[0].optFour}</li>
+                                    <li>{course.course[0].optOne}</li>
+                                    <li>{course.course[0].optTwo}</li>
+                                    <li>{course.course[0].optThree}</li>
+                                    <li>{course.course[0].optFour}</li>
                                 </ul>
                                 <button
                                     className="signin-btn-submit btn-lg btn-block "
