@@ -20,7 +20,7 @@ const courseSlice = createSlice({
 
 export default courseSlice.reducer;
 
-const { purchaseCourse, loadCourse } = courseSlice.actions;
+const { purchaseCourse } = courseSlice.actions;
 
 export const addAndPurchaseCourse = (course) => (dispatch) => {
     dispatch(purchaseCourse(course))
