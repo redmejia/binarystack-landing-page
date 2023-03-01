@@ -12,6 +12,7 @@ const Profile = () => {
     let navigate = useNavigate()
 
     const myCourses = plan.course.map(course => {
+        // console.log("course this ",course.course);
         return (
             <div className="col col-12 col-md-4 col-lg-4 col-xl-6 my-2" key={course.planId}>
                 <Card
@@ -36,7 +37,7 @@ const Profile = () => {
                                 className="proceed-btn btn-lg btn-block"
                                 type="submit"
                                 onClick={() => {
-                                    navigate('/learning', {state : course.courseTech})
+                                    navigate('/learning', {state : course.course})
                                 }}
                             >
                                 Continue Learning
